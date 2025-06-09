@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "document/01_RD/要件定義.md",
+                "file": "capture/Wordle Answer Finder - Word Finder.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "要件定義"
+              "title": "Wordle Answer Finder - Word Finder"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "document/01_RD/要件定義.md",
+                "file": "capture/Wordle Answer Finder - Word Finder.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "要件定義へのバックリンク"
+              "title": "Wordle Answer Finder - Word Finderへのバックリンク"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "document/01_RD/要件定義.md",
+                "file": "capture/Wordle Answer Finder - Word Finder.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "要件定義からのアウトゴーイングリンク"
+              "title": "Wordle Answer Finder - Word Finderからのアウトゴーイングリンク"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "document/01_RD/要件定義.md",
+                "file": "capture/Wordle Answer Finder - Word Finder.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "要件定義のアウトライン"
+              "title": "Wordle Answer Finder - Word Finderのアウトライン"
             }
           }
         ]
@@ -185,8 +185,9 @@
   },
   "active": "c4cf8ec2792e19f9",
   "lastOpenFiles": [
-    "capture/ポケモンWordle(ワードル) - ポケモンの名前を当てるクイズゲーム.md",
     "document/01_RD/要件定義.md",
+    "capture/Wordle Answer Finder - Word Finder.md",
+    "capture/ポケモンWordle(ワードル) - ポケモンの名前を当てるクイズゲーム.md",
     "document/04_PD",
     "document/03_DD",
     "document/02_BD",
