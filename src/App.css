@@ -15,26 +15,79 @@ h1 {
   margin-bottom: 30px;
 }
 
-.search-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px 20px;
-  margin: 20px 0;
-  border: 2px solid #ddd;
-  border-radius: 25px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease;
+.search-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
-.search-input:focus {
+.search-section {
+  margin-bottom: 30px;
+}
+
+.search-section:last-child {
+  margin-bottom: 0;
+}
+
+.search-section h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.exact-matches {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.exact-match-input {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.exact-match-input:focus {
   border-color: #3498db;
+  outline: none;
+}
+
+.filter-group {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.filter-input:focus {
+  border-color: #3498db;
+  outline: none;
 }
 
 .pokemon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
   padding: 20px;
 }
 
@@ -49,5 +102,5 @@ h1 {
 
 .pokemon-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 } 
