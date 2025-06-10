@@ -211,13 +211,13 @@ function App() {
 
         <div className="pokemon-list">
           {filteredPokemon.map((pokemon) => (
-            <div 
-              key={pokemon.id} 
+            <div
+              key={pokemon.id}
               className="pokemon-item"
               onClick={() => handlePokemonClick(pokemon)}
             >
-              <img 
-                src={`images/${pokemon.id}.png`}
+              <img
+                src={`${process.env.PUBLIC_URL}/images/${pokemon.id}.png`}
                 alt={pokemon.japaneseName}
                 className="pokemon-image"
               />
@@ -231,8 +231,8 @@ function App() {
             <div className="pokemon-details" onClick={e => e.stopPropagation()}>
               <button className="close-button" onClick={handleCloseDetails}>×</button>
               <div className="pokemon-header">
-                <img 
-                  src={`images/${selectedPokemon.id}.png`}
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/${selectedPokemon.id}.png`}
                   alt={selectedPokemon.japaneseName}
                   className="pokemon-detail-image"
                 />
@@ -263,11 +263,6 @@ function App() {
         )}
       </header>
       <footer className="footer">
-        <div className="footer-links">
-          <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
-          <span className="separator">|</span>
-          <a href="/terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>
-        </div>
         <p className="copyright">© 2024 ポケモンWordle検索ツール</p>
       </footer>
     </div>
