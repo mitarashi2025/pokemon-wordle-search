@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pokemon-wordle-search/static/css/main.f0c210fa.css",
+    "main.js": "/pokemon-wordle-search/static/js/main.70060454.js",
+    "index.html": "/pokemon-wordle-search/index.html",
+    "main.f0c210fa.css.map": "/pokemon-wordle-search/static/css/main.f0c210fa.css.map",
+    "main.70060454.js.map": "/pokemon-wordle-search/static/js/main.70060454.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0c210fa.css",
+    "static/js/main.70060454.js"
+  ]
+}
