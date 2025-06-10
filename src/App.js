@@ -14,6 +14,28 @@ const isHiraganaOrKatakana = (str) => {
   return /^[\u3040-\u309F\u30A0-\u30FF]+$/.test(str);
 };
 
+// タイプ英語→日本語変換マップ
+const typeTranslations = {
+  normal: 'ノーマル',
+  fire: 'ほのお',
+  water: 'みず',
+  electric: 'でんき',
+  grass: 'くさ',
+  ice: 'こおり',
+  fighting: 'かくとう',
+  poison: 'どく',
+  ground: 'じめん',
+  flying: 'ひこう',
+  psychic: 'エスパー',
+  bug: 'むし',
+  rock: 'いわ',
+  ghost: 'ゴースト',
+  dragon: 'ドラゴン',
+  dark: 'あく',
+  steel: 'はがね',
+  fairy: 'フェアリー'
+};
+
 function App() {
   const [pokemonList] = useState(allPokemon.filter(pokemon => pokemon.japaneseName.length === 5));
   const [filteredPokemon, setFilteredPokemon] = useState(pokemonList);
@@ -89,8 +111,7 @@ function App() {
       setPokemonDetails(prev => ({
         ...prev,
         [pokemon.id]: {
-          types: data.types.map(type => type.type.name),
-          image: data.sprites.other['official-artwork'].front_default || data.sprites.front_default
+          types: data.types.map(type => type.type.name)
         }
       }));
     } catch (error) {
@@ -196,7 +217,7 @@ function App() {
               onClick={() => handlePokemonClick(pokemon)}
             >
               <img 
-                src={pokemonDetails[pokemon.id]?.image || `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+                src={`/images/${pokemon.id}.png`}
                 alt={pokemon.japaneseName}
                 className="pokemon-image"
               />
@@ -211,7 +232,7 @@ function App() {
               <button className="close-button" onClick={handleCloseDetails}>×</button>
               <div className="pokemon-header">
                 <img 
-                  src={pokemonDetails[selectedPokemon.id]?.image || `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${selectedPokemon.id}.png`}
+                  src={`/images/${selectedPokemon.id}.png`}
                   alt={selectedPokemon.japaneseName}
                   className="pokemon-detail-image"
                 />
@@ -231,7 +252,7 @@ function App() {
                         className="type-badge"
                         style={{ backgroundColor: getTypeColor(type) }}
                       >
-                        {type}
+                        {typeTranslations[type] || type}
                       </span>
                     ))}
                   </div>
