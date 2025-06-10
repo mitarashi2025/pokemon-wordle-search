@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { allPokemon } from './data/index.js';
+import { allPokemon } from './data';
+import pokemonDetails from './data/pokemonDetails';
+
+// 画像のインポート
+const importAll = (r) => {
+  const images = {};
+  r.keys().forEach(item => {
+    const key = item.replace('./', '');
+    images[key] = r(item);
+  });
+  return images;
+};
+
+const images = importAll(require.context('./assets/images', false, /\.(png|jpe?g|svg)$/));
 
 // ひらがなをカタカナに変換する関数
 const toKatakana = (str) => {
@@ -14,12 +27,35 @@ const isHiraganaOrKatakana = (str) => {
   return /^[\u3040-\u309F\u30A0-\u30FF]+$/.test(str);
 };
 
+// タイプ英語→日本語変換マップ
+const typeTranslations = {
+  normal: 'ノーマル',
+  fire: 'ほのお',
+  water: 'みず',
+  electric: 'でんき',
+  grass: 'くさ',
+  ice: 'こおり',
+  fighting: 'かくとう',
+  poison: 'どく',
+  ground: 'じめん',
+  flying: 'ひこう',
+  psychic: 'エスパー',
+  bug: 'むし',
+  rock: 'いわ',
+  ghost: 'ゴースト',
+  dragon: 'ドラゴン',
+  dark: 'あく',
+  steel: 'はがね',
+  fairy: 'フェアリー',
+};
+
 function App() {
   const [pokemonList] = useState(allPokemon.filter(pokemon => pokemon.japaneseName.length === 5));
   const [filteredPokemon, setFilteredPokemon] = useState(pokemonList);
   const [exactMatches, setExactMatches] = useState(['', '', '', '', '']);
   const [containsLetters, setContainsLetters] = useState('');
   const [excludesLetters, setExcludesLetters] = useState('');
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   useEffect(() => {
     let filtered = pokemonList;
@@ -79,6 +115,50 @@ function App() {
     setExcludesLetters(value);
   };
 
+  const handlePokemonClick = (pokemon) => {
+    setSelectedPokemon(pokemon);
+  };
+
+  const handleCloseDetails = () => {
+    setSelectedPokemon(null);
+  };
+
+  const getGeneration = (id) => {
+    if (id <= 151) return '第1世代';
+    if (id <= 251) return '第2世代';
+    if (id <= 386) return '第3世代';
+    if (id <= 493) return '第4世代';
+    if (id <= 649) return '第5世代';
+    if (id <= 721) return '第6世代';
+    if (id <= 809) return '第7世代';
+    if (id <= 898) return '第8世代';
+    return '第9世代';
+  };
+
+  const getTypeColor = (type) => {
+    const typeColors = {
+      normal: '#A8A878',
+      fire: '#F08030',
+      water: '#6890F0',
+      electric: '#F8D030',
+      grass: '#78C850',
+      ice: '#98D8D8',
+      fighting: '#C03028',
+      poison: '#A040A0',
+      ground: '#E0C068',
+      flying: '#A890F0',
+      psychic: '#F85888',
+      bug: '#A8B820',
+      rock: '#B8A038',
+      ghost: '#705898',
+      dragon: '#7038F8',
+      dark: '#705848',
+      steel: '#B8B8D0',
+      fairy: '#EE99AC'
+    };
+    return typeColors[type] || '#A8A878';
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -131,11 +211,56 @@ function App() {
 
         <div className="pokemon-list">
           {filteredPokemon.map((pokemon) => (
-            <div key={pokemon.id} className="pokemon-item">
-              {pokemon.japaneseName}
+            <div 
+              key={pokemon.id} 
+              className="pokemon-item"
+              onClick={() => handlePokemonClick(pokemon)}
+            >
+              <img 
+                src={`/images/${pokemon.id}.png`}
+                alt={pokemon.japaneseName}
+                className="pokemon-image"
+              />
+              <span className="pokemon-name">{pokemon.japaneseName}</span>
             </div>
           ))}
         </div>
+
+        {selectedPokemon && (
+          <div className="pokemon-details-overlay" onClick={handleCloseDetails}>
+            <div className="pokemon-details" onClick={e => e.stopPropagation()}>
+              <button className="close-button" onClick={handleCloseDetails}>×</button>
+              <div className="pokemon-header">
+                <img 
+                  src={`/images/${selectedPokemon.id}.png`}
+                  alt={selectedPokemon.japaneseName}
+                  className="pokemon-detail-image"
+                />
+                <div className="pokemon-title">
+                  <h2>{selectedPokemon.japaneseName}</h2>
+                  <p className="pokemon-number">No.{selectedPokemon.id.toString().padStart(3, '0')}</p>
+                  <p className="pokemon-generation">{getGeneration(selectedPokemon.id)}</p>
+                </div>
+              </div>
+              <div className="pokemon-info">
+                <div className="info-section">
+                  <h3>基本情報</h3>
+                  <div className="type-container">
+                    {pokemonDetails[selectedPokemon.id]?.types.map((type, index) => (
+                      <span 
+                        key={index} 
+                        className="type-badge"
+                        style={{ backgroundColor: getTypeColor(type) }}
+                      >
+                        {typeTranslations[type] || type}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
       <footer className="footer">
         <div className="footer-links">
