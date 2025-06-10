@@ -1,4 +1,4 @@
-const allPokemon = [
+export const allPokemon = [
   {
     "id": 1,
     "name": "bulbasaur",
@@ -4955,5 +4955,3 @@ const allPokemon = [
     "japaneseName": "モモワロウ"
   }
 ];
-
-export default allPokemon;

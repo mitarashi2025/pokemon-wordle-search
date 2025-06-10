@@ -1,3 +1,11 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ナビゲーションのスタイルはNavigation.cssに移動しました */
+
 .App {
   text-align: center;
   min-height: 100vh;
@@ -351,4 +359,21 @@ h1 {
   font-weight: bold;
   text-transform: capitalize;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  margin-top: 3.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem;
+    margin-top: 3rem;
+  }
 } 

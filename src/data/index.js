@@ -7,9 +7,9 @@ import gen6Pokemon from './gen6Pokemon.js';
 import gen7Pokemon from './gen7Pokemon.js';
 import gen8Pokemon from './gen8Pokemon.js';
 import gen9Pokemon from './gen9Pokemon.js';
-import allPokemonData from './pokemonData.js';
+import { allPokemon } from './pokemonData.js';
 
-// 各世代のポケモンデータをエクスポート
+// 各世代のポケモンデータと全ポケモンデータをエクスポート
 export {
     gen1Pokemon,
     gen2Pokemon,
@@ -20,22 +20,5 @@ export {
     gen7Pokemon,
     gen8Pokemon,
     gen9Pokemon,
-    allPokemonData
-};
-
-// すべてのポケモンの名前を結合した配列
-const allPokemon = [
-  ...gen1Pokemon,
-  ...gen2Pokemon,
-  ...gen3Pokemon,
-  ...gen4Pokemon,
-  ...gen5Pokemon,
-  ...gen6Pokemon,
-  ...gen7Pokemon,
-  ...gen8Pokemon,
-  ...gen9Pokemon
-];
-
-export {
     allPokemon
 }; 
