@@ -40,5 +40,6 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  }
+  },
+  "homepage": "https://mitarashi2025.github.io/pokemon-wordle-search/"
 }

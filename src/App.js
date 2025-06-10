@@ -217,7 +217,7 @@ function App() {
               onClick={() => handlePokemonClick(pokemon)}
             >
               <img 
-                src={`/images/${pokemon.id}.png`}
+                src={`images/${pokemon.id}.png`}
                 alt={pokemon.japaneseName}
                 className="pokemon-image"
               />
@@ -232,7 +232,7 @@ function App() {
               <button className="close-button" onClick={handleCloseDetails}>×</button>
               <div className="pokemon-header">
                 <img 
-                  src={`/images/${selectedPokemon.id}.png`}
+                  src={`images/${selectedPokemon.id}.png`}
                   alt={selectedPokemon.japaneseName}
                   className="pokemon-detail-image"
                 />
