@@ -130,9 +130,9 @@ function App() {
         </div>
 
         <div className="pokemon-list">
-          {filteredPokemon.map((pokemon, index) => (
-            <div key={index} className="pokemon-item">
-              {pokemon}
+          {filteredPokemon.map((pokemon) => (
+            <div key={pokemon.id} className="pokemon-item">
+              {pokemon.japaneseName}
             </div>
           ))}
         </div>
