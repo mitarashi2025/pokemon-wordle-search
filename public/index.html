@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3498db" />
+    <meta name="theme-color" content="#000000" />
     
     <!-- 基本メタタグ -->
-    <title>ポケモンWordle検索ツール | 5文字のポケモン名を簡単に検索</title>
-    <meta name="description" content="ポケモンWordle検索ツールは、5文字のポケモン名を簡単に検索できる無料ツールです。位置がわかっている文字、含まれる文字、含まれない文字を指定して、該当するポケモンを素早く見つけられます。ひらがな・カタカナ両対応。" />
+    <title>ポケモンWordle検索ツール</title>
+    <meta name="description" content="ポケモンWordle検索ツール" />
     <meta name="keywords" content="ポケモン,Wordle,検索ツール,ポケモン検索,5文字,ポケモン名,ポケットモンスター,ゲーム,パズル" />
     
     <!-- OGPタグ -->
@@ -35,6 +35,21 @@
     
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <noscript>このアプリを実行するにはJavaScriptを有効にしてください。</noscript>
