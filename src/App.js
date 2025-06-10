@@ -130,13 +130,21 @@ function App() {
         </div>
 
         <div className="pokemon-list">
-          {filteredPokemon.map((pokemon) => (
-            <div key={pokemon.id} className="pokemon-item">
-              {pokemon.japaneseName}
+          {filteredPokemon.map((pokemon, index) => (
+            <div key={index} className="pokemon-item">
+              {pokemon}
             </div>
           ))}
         </div>
       </header>
+      <footer className="footer">
+        <div className="footer-links">
+          <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+          <span className="separator">|</span>
+          <a href="/terms.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+        </div>
+        <p className="copyright">© 2024 ポケモンWordle検索ツール</p>
+      </footer>
     </div>
   );
 }
