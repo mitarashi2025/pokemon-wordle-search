@@ -53,6 +53,57 @@
   </head>
   <body>
     <noscript>このアプリを実行するにはJavaScriptを有効にしてください。</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div className="pokemon-list">
+        {filteredPokemon.map((pokemon) => (
+          <div
+            key={pokemon.id}
+            className="pokemon-item"
+            onClick={() => handlePokemonClick(pokemon)}
+          >
+            <div className="pokemon-name">{pokemon.japaneseName}</div>
+          </div>
+        ))}
+      </div>
+
+      {selectedPokemon && (
+        <div className="pokemon-details-overlay" onClick={handleCloseDetails}>
+          <div className="pokemon-details" onClick={e => e.stopPropagation()}>
+            <button className="close-button" onClick={handleCloseDetails}>×</button>
+            <div className="pokemon-header">
+              <div className="pokemon-title">
+                <h2>{selectedPokemon.japaneseName}</h2>
+                <p className="pokemon-number">No.{selectedPokemon.id.toString().padStart(3, '0')}</p>
+                <p className="pokemon-generation">{getGeneration(selectedPokemon.id)}</p>
+                <a
+                  href={`https://www.pokemon.co.jp/zukan/detail/${selectedPokemon.id.toString().padStart(3, '0')}.html`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pokemon-link"
+                >
+                  公式ポケモン図鑑で見る
+                </a>
+              </div>
+            </div>
+            <div className="pokemon-info">
+              <div className="info-section">
+                <h3>基本情報</h3>
+                <div className="type-container">
+                  {pokemonDetails[selectedPokemon.id]?.types.map((type, index) => (
+                    <span
+                      key={index}
+                      className="type-badge"
+                      style={{ backgroundColor: getTypeColor(type) }}
+                    >
+                      {typeTranslations[type] || type}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   </body>
 </html> 

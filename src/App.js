@@ -216,12 +216,7 @@ function App() {
               className="pokemon-item"
               onClick={() => handlePokemonClick(pokemon)}
             >
-              <img
-                src={`${process.env.PUBLIC_URL}/images/${pokemon.id}.png`}
-                alt={pokemon.japaneseName}
-                className="pokemon-image"
-              />
-              <span className="pokemon-name">{pokemon.japaneseName}</span>
+              <div className="pokemon-name">{pokemon.japaneseName}</div>
             </div>
           ))}
         </div>
@@ -231,15 +226,18 @@ function App() {
             <div className="pokemon-details" onClick={e => e.stopPropagation()}>
               <button className="close-button" onClick={handleCloseDetails}>×</button>
               <div className="pokemon-header">
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/${selectedPokemon.id}.png`}
-                  alt={selectedPokemon.japaneseName}
-                  className="pokemon-detail-image"
-                />
                 <div className="pokemon-title">
                   <h2>{selectedPokemon.japaneseName}</h2>
                   <p className="pokemon-number">No.{selectedPokemon.id.toString().padStart(3, '0')}</p>
                   <p className="pokemon-generation">{getGeneration(selectedPokemon.id)}</p>
+                  <a
+                    href={`https://zukan.pokemon.co.jp/detail/${selectedPokemon.id.toString().padStart(3, '0')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pokemon-link"
+                  >
+                    公式ポケモン図鑑で見る
+                  </a>
                 </div>
               </div>
               <div className="pokemon-info">
@@ -247,8 +245,8 @@ function App() {
                   <h3>基本情報</h3>
                   <div className="type-container">
                     {pokemonDetails[selectedPokemon.id]?.types.map((type, index) => (
-                      <span 
-                        key={index} 
+                      <span
+                        key={index}
                         className="type-badge"
                         style={{ backgroundColor: getTypeColor(type) }}
                       >
