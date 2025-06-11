@@ -68,6 +68,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-section {
@@ -84,12 +87,17 @@
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .exact-matches {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: nowrap;
 }
 
 .exact-match-input {
@@ -242,16 +250,36 @@
     padding: 10px;
   }
 
+  .search-container {
+    padding: 15px 10px;
+    max-width: 100%;
+  }
+
+  .search-section {
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 12px;
+    margin-bottom: 8px;
+    white-space: normal;
+    overflow: visible;
+  }
+
   .pokemon-list {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .exact-matches {
-    flex-wrap: wrap;
+    gap: 5px;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 
   .exact-match-input {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    border-width: 1px;
   }
 } 

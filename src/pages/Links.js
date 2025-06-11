@@ -6,6 +6,26 @@ function Links() {
     <div className="page">
       <h1>リンク集</h1>
       <div className="content">
+      <section className="section">
+          <h2>ポケモンWordle</h2>
+          <div className="pokemon-wordle-links">
+            <div className="link-card">
+              <h3>ポケモンWordle（Mega Yadoran）</h3>
+              <p>ポケモンWordleの公式サイトです。</p>
+              <a href="https://wordle.mega-yadoran.jp/" target="_blank" rel="noopener noreferrer" className="external-link">
+                公式サイトへ
+              </a>
+            </div>
+            <div className="link-card">
+              <h3>POKÉDLE</h3>
+              <p>ポケモンWordleのオンライン版です。</p>
+              <a href="https://pokedle.app/" target="_blank" rel="noopener noreferrer" className="external-link">
+                POKÉDLEへ
+              </a>
+            </div>
+          </div>
+        </section>
+        
         <section className="section">
           <h2>公式サイト</h2>
           <div className="official-links">

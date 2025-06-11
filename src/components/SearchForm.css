@@ -1,0 +1,107 @@
+.search-form {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-weight: bold;
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+
+.filter-select {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  min-width: 100px;
+}
+
+/* 完全に新しいレイアウト */
+.known-positions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.known-position-group {
+  flex: 0 0 35px;
+  margin: 0 2px;
+  text-align: center;
+}
+
+.known-position-input {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .filter-options {
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.25rem;
+  }
+
+  .filter-group {
+    flex: 0 0 auto;
+    margin-right: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .filter-label {
+    margin-right: 0.1rem;
+  }
+
+  .filter-select {
+    min-width: 60px;
+    padding: 0.15rem;
+    font-size: 0.8rem;
+  }
+
+  .known-position-group {
+    flex: 0 0 30px;
+    margin: 0 1px;
+  }
+
+  .known-position-input {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+} 

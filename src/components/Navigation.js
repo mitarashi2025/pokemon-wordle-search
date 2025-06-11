@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 function Navigation() {
@@ -10,6 +10,10 @@ function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -17,37 +21,37 @@ function Navigation() {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
+        <NavLink to="/" className="nav-logo" onClick={closeMenu}>
           ポケモンWordle検索ツール
-        </Link>
+        </NavLink>
         <button className="mobile-menu-button" onClick={toggleMenu}>
           ☰
         </button>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+            <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={closeMenu}>
               ホーム
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/guide" className={`nav-link ${isActive('/guide') ? 'active' : ''}`}>
+            <NavLink to="/guide" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={closeMenu}>
               使い方
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/profile" className={`nav-link ${isActive('/profile') ? 'active' : ''}`}>
+            <NavLink to="/profile" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={closeMenu}>
               プロフィール
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/faq" className={`nav-link ${isActive('/faq') ? 'active' : ''}`}>
+            <NavLink to="/faq" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={closeMenu}>
               よくある質問
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/links" className={`nav-link ${isActive('/links') ? 'active' : ''}`}>
+            <NavLink to="/links" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={closeMenu}>
               リンク集
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
