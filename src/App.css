@@ -361,24 +361,23 @@ h1 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+/* メインコンテンツ */
 .main-content {
   flex: 1;
   padding: 2rem 1rem;
   margin-top: 3.5rem;
-  margin-left: 200px; /* 左サイドバーのスペース */
-  margin-right: 200px; /* 右サイドバーのスペース */
-  max-width: calc(100% - 400px); /* サイドバーを除いた幅 */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 170px; /* 左サイドウィジェットのスペース */
+  margin-right: 170px; /* 右サイドウィジェットのスペース */
+  max-width: calc(100% - 340px); /* サイドウィジェットを除いた幅 */
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* レスポンシブデザイン */
 @media (max-width: 1200px) {
   .main-content {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
+    margin-left: 170px;
+    margin-right: 170px;
   }
 }
 
@@ -386,5 +385,8 @@ h1 {
   .main-content {
     padding: 1rem;
     margin-top: 3rem;
+    margin-left: auto; /* モバイルではウィジェットを表示しない */
+    margin-right: auto;
+    max-width: 100%;
   }
 } 

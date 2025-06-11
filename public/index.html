@@ -35,6 +35,7 @@
     
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
@@ -50,9 +51,53 @@
         }
       }(window.location))
     </script>
+    
+    <style>
+      /* 楽天ウィジェット用スタイル */
+      .rakuten-widget-container {
+        position: fixed;
+        top: 70px; /* ナビゲーションバーの下に配置 */
+        z-index: 1000;
+        pointer-events: none; /* 初期状態ではクリックイベントを通す */
+      }
+      
+      .widget-left {
+        left: 10px;
+      }
+      
+      .widget-right {
+        right: 10px;
+      }
+      
+      /* ウィジェット自体はクリック可能に */
+      .rakuten-widget-container iframe,
+      .rakuten-widget-container div {
+        pointer-events: auto; /* ウィジェット自体はクリック可能に */
+      }
+      
+      @media (max-width: 768px) {
+        .rakuten-widget-container {
+          display: none; /* モバイルでは非表示 */
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>このアプリを実行するにはJavaScriptを有効にしてください。</noscript>
     <div id="root"></div>
+
+    <!-- 楽天ウィジェット（左） -->
+    <div class="rakuten-widget-container widget-left">
+      <!-- MAF Rakuten Widget FROM HERE -->
+      <script type="text/javascript">MafRakutenWidgetParam=function() { return{ size:'148x600',design:'slide',recommend:'on',auto_mode:'on',a_id:'5071022', border:'off'};};</script><script type="text/javascript" src="//image.moshimo.com/static/publish/af/rakuten/widget.js"></script>
+      <!-- MAF Rakuten Widget TO HERE -->
+    </div>
+    
+    <!-- 楽天ウィジェット（右） -->
+    <div class="rakuten-widget-container widget-right">
+      <!-- MAF Rakuten Widget FROM HERE -->
+      <script type="text/javascript">MafRakutenWidgetParam=function() { return{ size:'148x600',design:'slide',recommend:'on',auto_mode:'on',a_id:'5071022', border:'off'};};</script><script type="text/javascript" src="//image.moshimo.com/static/publish/af/rakuten/widget.js"></script>
+      <!-- MAF Rakuten Widget TO HERE -->
+    </div>
   </body>
 </html> 
