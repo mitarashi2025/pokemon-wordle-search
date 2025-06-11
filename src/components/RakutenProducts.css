@@ -1,0 +1,137 @@
+.rakuten-products {
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rakuten-products h3 {
+  font-size: 1.2rem;
+  color: #bf0000; /* 楽天カラー */
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.product-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-link {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.product-item:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 0.8rem;
+}
+
+.product-name {
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.6rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #bf0000; /* 楽天カラー */
+  margin: 0;
+}
+
+.rakuten-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.rakuten-footer a {
+  color: #bf0000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #bf0000;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.rakuten-footer a:hover {
+  background-color: #bf0000;
+  color: white;
+}
+
+.rakuten-loading,
+.rakuten-error {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+/* モバイル表示の調整 */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* If the above rules exist, they have been commented out/removed so that the default grid layout (repeat(auto-fill, minmax(150px, 1fr))) and image sizing are applied. */
+
+/* Remove the following override block if present */
+
+/*
+.affiliate-bar .rakuten-products .product-list {
+  grid-template-columns: 1fr;
+}
+
+.affiliate-bar .rakuten-products .product-image {
+  height: 120px;
+}
+*/ 

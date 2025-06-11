@@ -12,7 +12,7 @@ function Links() {
             <div className="link-card">
               <h3>ポケモンWordle（Mega Yadoran）</h3>
               <a href="https://wordle.mega-yadoran.jp/" target="_blank" rel="noopener noreferrer" className="external-link">
-                公式サイトへ
+                ポケモンWordleへ
               </a>
             </div>
             <div className="link-card">

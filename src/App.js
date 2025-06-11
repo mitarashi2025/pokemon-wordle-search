@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import AffiliateBar from './components/AffiliateBar';
 import Home from './pages/Home';
 import Guide from './pages/Guide';
 import Profile from './pages/Profile';
@@ -50,6 +51,8 @@ function App() {
     <Router basename="/pokemon-wordle-search">
       <div className="app">
         <Navigation />
+        <AffiliateBar position="left" />
+        <AffiliateBar position="right" />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

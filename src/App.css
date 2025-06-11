@@ -363,17 +363,28 @@ h1 {
 
 .main-content {
   flex: 1;
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin-top: 3.5rem;
-  max-width: 1200px;
+  margin-left: 200px; /* 左サイドバーのスペース */
+  margin-right: 200px; /* 右サイドバーのスペース */
+  max-width: calc(100% - 400px); /* サイドバーを除いた幅 */
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
+
 @media (max-width: 768px) {
   .main-content {
-    padding: 0.5rem;
+    padding: 1rem;
     margin-top: 3rem;
   }
 } 

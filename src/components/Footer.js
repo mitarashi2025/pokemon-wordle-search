@@ -11,7 +11,7 @@ function Footer() {
           <Link to="/contact" className="footer-link">お問い合わせ</Link>
         </div>
         <div className="footer-copyright">
-          © 2024 ポケモンWordle検索ツール. All rights reserved.
+          © 2025 ポケモンWordle検索ツール. All rights reserved.
         </div>
       </div>
     </footer>
