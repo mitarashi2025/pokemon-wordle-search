@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pokemon-wordle-search/static/css/main.6cd1256e.css",
-    "main.js": "/pokemon-wordle-search/static/js/main.b1bc61c8.js",
+    "main.css": "/pokemon-wordle-search/static/css/main.2292ad91.css",
+    "main.js": "/pokemon-wordle-search/static/js/main.f28bf838.js",
     "index.html": "/pokemon-wordle-search/index.html",
-    "main.6cd1256e.css.map": "/pokemon-wordle-search/static/css/main.6cd1256e.css.map",
-    "main.b1bc61c8.js.map": "/pokemon-wordle-search/static/js/main.b1bc61c8.js.map"
+    "main.2292ad91.css.map": "/pokemon-wordle-search/static/css/main.2292ad91.css.map",
+    "main.f28bf838.js.map": "/pokemon-wordle-search/static/js/main.f28bf838.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cd1256e.css",
-    "static/js/main.b1bc61c8.js"
+    "static/css/main.2292ad91.css",
+    "static/js/main.f28bf838.js"
   ]
 }
